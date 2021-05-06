@@ -11,7 +11,7 @@ class Title extends Component {
       <p
         style={{
           fontSize: "25px",
-          fontFamily: "-webkit-pictograph",
+          font: "Source Sans Pro",
           marginBottom: "-28px",
         }}
       >
@@ -30,7 +30,7 @@ export default function ContainerMediaOds() {
           <Paper
             style={{
               backgroundImage:
-                "linear-gradient(to left, #FF6347, #FF5A0FB3 70%)",
+                "linear-gradient(to left, #E61400B3, #FF5A0FB3 70%)",
               alignItems: "center",
               marginTop: "29px",
               marginLeft: "306px",

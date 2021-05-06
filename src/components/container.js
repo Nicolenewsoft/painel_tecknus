@@ -2,13 +2,23 @@ import React, { Component } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import {Divisions} from '../components/divider';
+import { Divisions } from "../components/divider";
 
-class Title extends Component{
-  render(){
-    return <p style={{fontSize: "25px", fontFamily: "-webkit-pictograph", marginBottom: "-28px"}}>{this.props.text}</p>
+class Title extends Component {
+  render() {
+    return (
+      <p
+        style={{
+          fontSize: "25px",
+          font: "Source Sans Pro",
+          marginBottom: "-28px",
+        }}
+      >
+        {this.props.text}
+      </p>
+    );
   }
-} 
+}
 
 export class SimpleContainer extends Component {
   render() {
@@ -19,7 +29,8 @@ export class SimpleContainer extends Component {
           <Grid item xs={12}>
             <Paper
               style={{
-                backgroundImage: "linear-gradient(to left, #FF6347, #FF5A0FB3 70%)",
+                backgroundImage:
+                  "linear-gradient(to left, #E61400B3, #FF5A0FB3 70%)",
                 alignItems: "center",
                 marginTop: "29px",
                 marginLeft: "306px",
@@ -33,7 +44,7 @@ export class SimpleContainer extends Component {
                 boxShadow: "0px 0px 9px 0px #4233339e",
               }}
             >
-              <Title text={this.props.Title}/>
+              <Title text={this.props.Title} />
               <Paper
                 style={{
                   background: "white",
@@ -46,7 +57,7 @@ export class SimpleContainer extends Component {
                   boxShadow: "1px 1px 9px 0px #4f4f4f",
                 }}
               >
-                <Divisions/>
+                <Divisions />
               </Paper>
             </Paper>
           </Grid>

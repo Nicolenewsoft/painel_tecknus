@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
+import GroupOptions from "./group_options";
 
 class Title extends Component {
   render() {
@@ -9,7 +10,7 @@ class Title extends Component {
       <p
         style={{
           fontSize: "25px",
-          fontFamily: "-webkit-pictograph",
+          font: "Source Sans Pro",
           marginBottom: "-28px",
         }}
       >
@@ -28,7 +29,7 @@ export default function ContainerMediaOds() {
           <Paper
             style={{
               backgroundImage:
-                "linear-gradient(to left, #FF6347, #FF5A0FB3 70%)",
+                "linear-gradient(to left, #E61400B3, #FF5A0FB3 70%)",
               alignItems: "center",
               marginTop: "29px",
               marginLeft: "306px",
@@ -54,7 +55,9 @@ export default function ContainerMediaOds() {
                 marginTop: "48px",
                 boxShadow: "1px 1px 9px 0px #4f4f4f",
               }}
-            ></Paper>
+            >
+              <GroupOptions />
+            </Paper>
           </Paper>
         </Grid>
       </Grid>

@@ -8,14 +8,14 @@ export default function UltimosAcessos() {
   return (
     <div
       style={{
-        backgroundImage: "linear-gradient(to left, #FF6347, #FF5A0FB3 70%)",
+        backgroundImage: "linear-gradient(to left, #E61400B3, #FF5A0FB3 70%)",
       }}
     >
       <img
         src={logoEnel}
         alt="Logo Enel"
         style={{
-          marginLeft: "653px",
+          marginLeft: "584px",
           paddingBottom: "20px",
           paddingTop: "53px",
           height: "137px",
