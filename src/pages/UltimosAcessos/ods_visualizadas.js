@@ -9,6 +9,8 @@ export default function UltimosAcessos() {
     <div
       style={{
         backgroundImage: "linear-gradient(to left, #E61400B3, #FF5A0FB3 70%)",
+        width: "100%",
+        height: "100%",
       }}
     >
       <img
@@ -22,9 +24,9 @@ export default function UltimosAcessos() {
           marginTop: "-27px",
         }}
       />
+      <Menu />
       <Divider />
       <OdsVisualizadas />
-      <Menu />
     </div>
   );
 }

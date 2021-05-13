@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import GroupOptions from "./group_options";
+import Table from "../components/table_average_access";
 
 class Title extends Component {
   render() {
@@ -31,12 +31,12 @@ export default function ContainerMediaOds() {
               backgroundImage:
                 "linear-gradient(to left, #E61400B3, #FF5A0FB3 70%)",
               alignItems: "center",
-              marginTop: "29px",
-              marginLeft: "306px",
-              marginRight: "226px",
-              borderRadius: "18px",
-              padding: "25px",
-              paddingTop: "1px",
+              marginTop: "3%",
+              marginLeft: "20%",
+              marginRight: "15%",
+              borderRadius: "2vh",
+              padding: "1vh 2% 1%",
+              paddingTop: "6vh",
               font: "30px / 37px Nunito, sans-serif",
               textAlign: "center",
               color: "#FFFFFF",
@@ -46,17 +46,17 @@ export default function ContainerMediaOds() {
             <Title />
             <Paper
               style={{
-                background: "white",
+                backgroundImage: "white",
                 alignItems: "center",
-                padding: "25px",
-                borderRadius: "4px",
-                marginRight: "17px",
-                marginLeft: "17px",
-                marginTop: "48px",
+                padding: "5vh",
+                borderRadius: "2vh",
+                marginRight: "0vh",
+                marginLeft: "0vh",
+                marginTop: "8vh",
                 boxShadow: "1px 1px 9px 0px #4f4f4f",
               }}
             >
-              <GroupOptions />
+              <Table />
             </Paper>
           </Paper>
         </Grid>

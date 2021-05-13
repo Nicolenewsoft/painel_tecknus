@@ -1,103 +1,83 @@
 import React from "react";
-import Paper from "@material-ui/core/Paper";
-import MenuItem from "@material-ui/core/MenuItem";
-import MenuList from "@material-ui/core/MenuList";
 import { makeStyles } from "@material-ui/core/styles";
-import logoUltimosAcessos from "../assets/logo_ultimos_acessos.png";
-import logoMediaOds from "../assets/logo_media_ods.png";
-import logoOdsVisualizadas from "../assets/logo_ods_visualizadas.png";
-import logoRealidadeAumentada from "../assets/logo.png";
+import LanguageIcon from "@material-ui/icons/Language";
+import Breadcrumbs from "@material-ui/core/Breadcrumbs";
+import Link from "@material-ui/core/Link";
+import BarChartIcon from "@material-ui/icons/BarChart";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import DoneAllIcon from "@material-ui/icons/DoneAll";
+import AddToHomeScreenIcon from "@material-ui/icons/AddToHomeScreen";
 import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
+  link: {
     display: "flex",
+    color: "#fff",
   },
-  paper: {
-    marginRight: theme.spacing(2),
-    marginLeft: "107px",
-    height: "53vh",
-    marginBlock: "-409px",
-    width: "74px",
-    paddingTop: "1px",
-    background: "#FFFFFF",
-    boxShadow: "0px 10px 40px #1f1414b8",
-    borderRadius: "20px",
-    opacity: "0.5",
-  },
-  menu_logos: {
-    height: "15px",
-    marginTop: "21px",
-    marginLeft: "8px",
-    paddingTop: "17px",
-    paddingBlock: "20px",
-  },
-  logo: {
-    paddingBottom: "22px",
+  icon: {
+    marginRight: theme.spacing(0.5),
+
+    width: 30,
+    height: 30,
+    color: "#fff",
   },
 }));
 
-export default function MenuListComposition() {
+function handleClick(event) {
+  event.preventDefault();
+  console.info("You clicked a breadcrumb.");
+}
+
+export default function IconBreadcrumbs() {
   const classes = useStyles();
-  const [open] = React.useState(false);
-  const anchorRef = React.useRef(null);
   const history = useHistory();
 
-  // return focus to the button when we transitioned from !open -> open
-  const prevOpen = React.useRef(open);
-  React.useEffect(() => {
-    if (prevOpen.current === true && open === false) {
-      anchorRef.current.focus();
-    }
-
-    prevOpen.current = open;
-  }, [open]);
-
   return (
-    <div className={classes.root}>
-      <Paper className={classes.paper}>
-        <MenuList className={classes.menu_logos}>
-          <MenuItem className={classes.logo} onClick={() => history.push("/")}>
-            <img
-              src={logoRealidadeAumentada}
-              alt="logo realidade aumentada"
-              style={{
-                height: "45px",
-                marginLeft: "-9px",
-                marginTop: "-4px",
-                marginBottom: "26px",
-              }}
-            />
-          </MenuItem>
-          <MenuItem
-            className={classes.logo}
-            onClick={() => history.push("/ranking")}
-          >
-            <img
-              src={logoUltimosAcessos}
-              alt="logo últimos acessos"
-              style={{ height: "15px" }}
-            />
-          </MenuItem>
-          <MenuItem
-            className={classes.logo}
-            onClick={() => history.push("/media_de_ods")}
-          >
-            <img src={logoMediaOds} alt="logo média de ods" />
-          </MenuItem>
-          <MenuItem
-            className={classes.logo}
-            onClick={() => history.push("/ods_visualizadas")}
-          >
-            <img
-              src={logoOdsVisualizadas}
-              alt="logo ods visualizadas"
-              style={{ height: "21px" }}
-            />
-          </MenuItem>
-        </MenuList>
-      </Paper>
-      <div></div>
-    </div>
+    <Breadcrumbs aria-label="breadcrumb" style={{ marginLeft: "10%" }}>
+      <Link
+        color="inherit"
+        href=""
+        onClick={() => history.push("/ultimos_acessos")}
+        className={classes.link}
+      >
+        <AddToHomeScreenIcon className={classes.icon} />
+        Últimos Acessos
+      </Link>
+      <Link
+        color="inherit"
+        href=""
+        onClick={() => history.push("/ranking")}
+        className={classes.link}
+      >
+        <BarChartIcon className={classes.icon} />
+        Quantidade de acessos
+      </Link>
+      <Link
+        color="inherit"
+        href=""
+        onClick={() => history.push("/media_de_ods")}
+        className={classes.link}
+      >
+        <LanguageIcon className={classes.icon} />
+        Média por estado
+      </Link>
+      <Link
+        color="inherit"
+        href=""
+        onClick={() => history.push("/ods_visualizadas")}
+        className={classes.link}
+      >
+        <DoneAllIcon className={classes.icon} />
+        Quantidade de ODS's visualizadas
+      </Link>
+      <Link
+        color="inherit"
+        href="/"
+        onClick={() => history.push("/")}
+        className={classes.link}
+      >
+        <ExitToAppIcon className={classes.icon} />
+      </Link>
+    </Breadcrumbs>
   );
 }

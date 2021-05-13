@@ -7,12 +7,11 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   abas: {
     borderRadius: "15px",
-
     borderStyle: "solid",
     borderWidth: "thin",
     borderColor: "#FF5A0FB3",
-    width: "472px",
-    marginLeft: "70px",
+    width: "80%",
+    marginLeft: "15%",
     marginTop: "-45px",
   },
 });
@@ -23,13 +22,23 @@ export default function DisabledTabs(props) {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    console.log("öi");
+
+    if (newValue === 0) {
+      props.onClickDay();
+    }
+    if (newValue === 1) {
+      props.onClickWeek();
+    }
+    if (newValue === 2) {
+      props.onClickMonth();
+    }
   };
 
   return (
     <Paper square classes={{ root: classes.abas }}>
       <Tabs
         value={value}
-        indicatorColor=""
         textColor="inherit"
         onChange={handleChange}
         aria-label="disabled tabs example"
