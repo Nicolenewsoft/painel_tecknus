@@ -30,15 +30,14 @@ export default function ContainerMediaOds() {
         <Grid item xs={12}>
           <Paper
             style={{
-              backgroundImage:
-                "linear-gradient(to left, #E61400B3, #FF5A0FB3 70%)",
+              backgroundColor: "#ff7f50",
               alignItems: "center",
-              marginTop: "29px",
-              marginLeft: "306px",
-              marginRight: "226px",
-              borderRadius: "18px",
-              padding: "25px",
-              paddingTop: "1px",
+              marginTop: "3%",
+              marginLeft: "20%",
+              marginRight: "15%",
+              borderRadius: "2vh",
+              padding: "15vh 2% 1%",
+              paddingTop: "6vh",
               font: "30px / 37px Nunito, sans-serif",
               textAlign: "center",
               color: "#FFFFFF",

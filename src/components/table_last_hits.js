@@ -25,9 +25,9 @@ export default function BasicTable() {
   useEffect(() => getAccess(), []);
 
   async function getAccess() {
-    const response = await api.post("/suporterealidadeaumentada/login-painel", {
-      br: "BR05021998",
-    });
+    const response = await api.get(
+      "/suporterealidadeaumentada/ultimos-acessos"
+    );
     console.log(response);
     setAccess(response.data.usuarios_ultimo_acesso);
   }
@@ -41,7 +41,7 @@ export default function BasicTable() {
             <TableCell
               style={{
                 fontWeight: "bold",
-                paddingLeft: "30px",
+                paddingLeft: "9%",
               }}
             >
               Área
@@ -49,7 +49,7 @@ export default function BasicTable() {
             <TableCell
               style={{
                 fontWeight: "bold",
-                paddingLeft: "30px",
+                paddingLeft: "9%",
               }}
             >
               Diretoria
@@ -57,7 +57,7 @@ export default function BasicTable() {
             <TableCell
               style={{
                 fontWeight: "bold",
-                paddingLeft: "30px",
+                paddingLeft: "9%",
               }}
             >
               Estado
@@ -65,7 +65,7 @@ export default function BasicTable() {
             <TableCell
               style={{
                 fontWeight: "bold",
-                paddingLeft: "30px",
+                paddingLeft: "9%",
               }}
             >
               Último acesso

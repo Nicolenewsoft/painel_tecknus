@@ -15,9 +15,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#fff",
   },
   icon: {
-    marginRight: theme.spacing(0.5),
+    marginRight: theme.spacing(1),
 
-    width: 30,
+    width: 50,
     height: 30,
     color: "#fff",
   },
@@ -33,7 +33,7 @@ export default function IconBreadcrumbs() {
   const history = useHistory();
 
   return (
-    <Breadcrumbs aria-label="breadcrumb" style={{ marginLeft: "10%" }}>
+    <Breadcrumbs aria-label="breadcrumb" style={{ marginLeft: "6%" }}>
       <Link
         color="inherit"
         href=""
@@ -59,7 +59,7 @@ export default function IconBreadcrumbs() {
         className={classes.link}
       >
         <LanguageIcon className={classes.icon} />
-        Média por estado
+        Visualizações por estado
       </Link>
       <Link
         color="inherit"
@@ -77,6 +77,7 @@ export default function IconBreadcrumbs() {
         className={classes.link}
       >
         <ExitToAppIcon className={classes.icon} />
+        Sair
       </Link>
     </Breadcrumbs>
   );

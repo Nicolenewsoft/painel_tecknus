@@ -14,7 +14,7 @@ class Title extends Component {
           marginBottom: "-28px",
         }}
       >
-        Média de ODS'S visualizadas
+        ODS'S visualizadas por estado
       </p>
     );
   }
@@ -28,14 +28,13 @@ export default function ContainerMediaOds() {
         <Grid item xs={12}>
           <Paper
             style={{
-              backgroundImage:
-                "linear-gradient(to left, #E61400B3, #FF5A0FB3 70%)",
+              backgroundColor: "#ff7f50",
               alignItems: "center",
               marginTop: "3%",
               marginLeft: "20%",
               marginRight: "15%",
               borderRadius: "2vh",
-              padding: "1vh 2% 1%",
+              padding: "8vh 2% 1%",
               paddingTop: "6vh",
               font: "30px / 37px Nunito, sans-serif",
               textAlign: "center",

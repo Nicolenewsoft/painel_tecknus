@@ -14,7 +14,7 @@ class Title extends Component {
           marginBottom: "-28px",
         }}
       >
-        {this.props.text}
+        Quantidade de acessos
       </p>
     );
   }
@@ -29,8 +29,7 @@ export class SimpleContainer extends Component {
           <Grid item xs={12}>
             <Paper
               style={{
-                backgroundImage:
-                  "linear-gradient(to left, #E61400B3, #FF5A0FB3 70%)",
+                backgroundColor: "#ff7f50",
                 alignItems: "center",
                 marginTop: "3%",
                 marginLeft: "20%",

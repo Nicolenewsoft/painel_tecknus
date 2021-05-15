@@ -27,8 +27,7 @@ export default function ContainerUltimosAcessos() {
         <Grid item xs={12}>
           <Paper
             style={{
-              backgroundImage:
-                "linear-gradient(to left, #E61400B3, #FF5A0FB3 70%)",
+              backgroundColor: "#ff7f50",
               alignItems: "center",
               marginTop: "3%",
               marginLeft: "20%",

@@ -44,7 +44,7 @@ export default function BasicTable() {
                 paddingLeft: "30px",
               }}
             >
-              Média de acessos
+              Acessos por estado
             </TableCell>
           </TableRow>
         </TableHead>
@@ -58,7 +58,7 @@ export default function BasicTable() {
               scope="row"
               style={{ paddingLeft: "70px" }}
             >
-              {access.porcentagem_ceara}
+              {`${access.porcentagem_ceara} %`}
             </TableCell>
           </TableRow>
           <TableRow>
@@ -70,7 +70,7 @@ export default function BasicTable() {
               scope="row"
               style={{ paddingLeft: "70px" }}
             >
-              {access.porcentagem_goias}
+              {`${access.porcentagem_goias} %`}
             </TableCell>
           </TableRow>
           <TableRow>
@@ -82,7 +82,7 @@ export default function BasicTable() {
               scope="row"
               style={{ paddingLeft: "70px" }}
             >
-              {access.porcentagem_sao_paulo}
+              {`${access.porcentagem_sao_paulo} %`}
             </TableCell>
           </TableRow>
           <TableRow>
@@ -94,7 +94,7 @@ export default function BasicTable() {
               scope="row"
               style={{ paddingLeft: "70px" }}
             >
-              {access.porcentagem_rio}
+              {`${access.porcentagem_rio} %`}
             </TableCell>
           </TableRow>
         </TableBody>
