@@ -23,11 +23,6 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function handleClick(event) {
-  event.preventDefault();
-  console.info("You clicked a breadcrumb.");
-}
-
 export default function IconBreadcrumbs() {
   const classes = useStyles();
   const history = useHistory();
