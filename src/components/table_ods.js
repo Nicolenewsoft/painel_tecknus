@@ -7,7 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import api from "../services/api";
+import api from "../services/api.json";
 
 const useStyles = makeStyles({
   table: {
@@ -20,19 +20,21 @@ const useStyles = makeStyles({
 
 export default function BasicTable(props) {
   const classes = useStyles();
-  const [visualizacoes, setVisualizacoes] = useState([]);
+  const [visualizacoes, setVisualizacoes] = useState(api.quantidade_posts_visualizados[0].mes);
 
-  useEffect(() => getOds(), [props.value]);
+  useEffect(()=>{changePosts(props.value)}, [props.value])
 
-  async function getOds() {
-    const response = await api.post(
-      "/suporterealidadeaumentada/visualizacoes-por-dia",
-      {
-        dia: props.value,
-      }
-    );
-    console.log(response);
-    setVisualizacoes(response.data.usuarios);
+  function changePosts(day){
+    if(day === 30){
+      setVisualizacoes(api.quantidade_posts_visualizados[0].mes)
+    } 
+    if(day === 7){
+      setVisualizacoes(api.quantidade_posts_visualizados[0].semana)
+    } 
+    if(day === 1){
+      setVisualizacoes(api.quantidade_posts_visualizados[0].dia)
+    } 
+
   }
 
   return (
@@ -54,11 +56,12 @@ export default function BasicTable(props) {
                 paddingLeft: "30px",
               }}
             >
-              ODS's visualizadas
+              Posts visualizados
             </TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
+          {console.log(visualizacoes)}
           {visualizacoes.length === 0 ? (
             <TableRow>
               <TableCell style={{ fontSize: "2vh" }}>
@@ -76,7 +79,7 @@ export default function BasicTable(props) {
                   scope="row"
                   style={{ paddingLeft: "70px" }}
                 >
-                  {`${item.list_ods.length}/17`}
+                  {item.quantidade}
                 </TableCell>
               </TableRow>
             ))

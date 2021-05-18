@@ -12,10 +12,10 @@ class Title extends Component {
         style={{
           fontSize: "25px",
           font: "Source Sans Pro",
-          marginBottom: "-28px",
+          marginBottom: "-12px",
         }}
       >
-        ODS's visualizadas
+        Post's visualizados
       </p>
     );
   }
@@ -32,13 +32,14 @@ export default function ContainerMediaOds() {
             style={{
               backgroundColor: "#ff7f50",
               alignItems: "center",
-              marginTop: "3%",
+              marginTop: "1%",
               marginLeft: "20%",
               marginRight: "15%",
               borderRadius: "2vh",
-              padding: "15vh 2% 1%",
+              padding: "1vh 2% 1%",
+              paddingBottom: "3%",
               paddingTop: "6vh",
-              font: "30px / 37px Nunito, sans-serif",
+              font: "30px / 0px Nunito, sans-serif",
               textAlign: "center",
               color: "#FFFFFF",
               boxShadow: "0px 0px 9px 0px #4233339e",

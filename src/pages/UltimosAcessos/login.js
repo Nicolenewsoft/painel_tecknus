@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
@@ -8,18 +8,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import { useHistory } from "react-router-dom";
-import api from "../../services/api";
-import { Grid } from "@material-ui/core";
-import swal from "sweetalert";
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    width: "100%",
-    "& > * + *": {
-      marginTop: theme.spacing(2),
-    },
-    position: "absolute",
-  },
   paper: {
     marginTop: theme.spacing(8),
     display: "flex",
@@ -43,30 +33,6 @@ export default function SignIn() {
   const classes = useStyles();
   const history = useHistory();
 
-  const [br, setBr] = useState([]);
-
-  async function getLogin() {
-    console.log("teste");
-
-    try {
-      const response = await api.post(
-        "/suporterealidadeaumentada/login-painel",
-        {
-          br,
-        }
-      );
-      history.push("/ultimos_acessos");
-    } catch (error) {
-      if (error.response.status === 401) {
-        console.log("entrou");
-        swal({
-          text: "Digite um BR válido!",
-          icon: "warning",
-        });
-      }
-    }
-  }
-
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -77,15 +43,17 @@ export default function SignIn() {
         <Typography component="h1" variant="h5">
           Login
         </Typography>
-        <Grid className={classes.form}>
+        <form className={classes.form} noValidate>
           <TextField
             variant="outlined"
             margin="normal"
             required
             fullWidth
+            id="email"
             label="BR"
-            name="Br"
-            onChange={(event) => setBr(event.target.value)}
+            name="email"
+            autoComplete="email"
+            autoFocus
           />
           <Button
             type="submit"
@@ -93,11 +61,11 @@ export default function SignIn() {
             variant="contained"
             color="primary"
             className={classes.submit}
-            onClick={() => getLogin()}
+            onClick={() => history.push("/ultimos_acessos")}
           >
             Entrar
           </Button>
-        </Grid>
+        </form>
       </div>
     </Container>
   );

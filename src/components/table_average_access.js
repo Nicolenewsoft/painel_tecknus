@@ -7,8 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import api from "../services/api";
-
+import api from "../services/api.json";
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -20,17 +19,6 @@ const useStyles = makeStyles({
 
 export default function BasicTable() {
   const classes = useStyles();
-  const [access, setAccess] = useState([]);
-
-  useEffect(() => getAccess(), []);
-
-  async function getAccess() {
-    const response = await api.get(
-      "/suporterealidadeaumentada/media-acessos-por-estado"
-    );
-    console.log(response);
-    setAccess(response.data.quantidade_de_acessos_por_estado);
-  }
 
   return (
     <TableContainer component={Paper} classes={{ root: classes.border }}>
@@ -58,7 +46,7 @@ export default function BasicTable() {
               scope="row"
               style={{ paddingLeft: "70px" }}
             >
-              {`${access.porcentagem_ceara} %`}
+              {api.visualizacoes_por_estado[0].ceara}
             </TableCell>
           </TableRow>
           <TableRow>
@@ -70,19 +58,7 @@ export default function BasicTable() {
               scope="row"
               style={{ paddingLeft: "70px" }}
             >
-              {`${access.porcentagem_goias} %`}
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell component="th" scope="row">
-              São Paulo
-            </TableCell>
-            <TableCell
-              component="th"
-              scope="row"
-              style={{ paddingLeft: "70px" }}
-            >
-              {`${access.porcentagem_sao_paulo} %`}
+              {api.visualizacoes_por_estado[1].goias}
             </TableCell>
           </TableRow>
           <TableRow>
@@ -94,7 +70,20 @@ export default function BasicTable() {
               scope="row"
               style={{ paddingLeft: "70px" }}
             >
-              {`${access.porcentagem_rio} %`}
+              {api.visualizacoes_por_estado[2].rio_de_janeiro}
+            </TableCell>
+          </TableRow>
+          <TableRow>
+            <TableCell component="th" scope="row">
+              São Paulo
+            </TableCell>
+            <TableCell
+              component="th"
+              scope="row"
+              style={{ paddingLeft: "70px" }}
+            >
+              {console.log(api.visualizacoes_por_estado)}
+             {api.visualizacoes_por_estado[3].sao_paulo}
             </TableCell>
           </TableRow>
         </TableBody>

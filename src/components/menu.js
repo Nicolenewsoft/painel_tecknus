@@ -63,7 +63,7 @@ export default function IconBreadcrumbs() {
         className={classes.link}
       >
         <DoneAllIcon className={classes.icon} />
-        Quantidade de ODS's visualizadas
+        Quantidade de post's visualizados
       </Link>
       <Link
         color="inherit"

@@ -1,0 +1,47 @@
+{
+  "ultimos_acessos": [
+    {"nome": "João Paulo", "area": "Escritor", "estado": "Ceará", "ultimo_acesso": "17/05/2021 19:10"},
+    {"nome": "Mateus Sousa", "area": "Tecnologia", "estado": "São Paulo", "ultimo_acesso": "17/05/2021 19:10"},
+    {"nome": "Ana Cristina", "area": "Empresária", "estado": "Ceará", "ultimo_acesso": "17/05/2021 19:10"},
+    {"nome": "Nicolas Falcão", "area": "Vendedor", "estado": "Rio de Janeiro", "ultimo_acesso": "17/05/2021 19:10"}
+  ],
+
+  "quantidade_acessos": [
+    {"nome": "João Paulo", "quantidade_acessos": "2"},
+    {"nome": "Mateus Sousa", "quantidade_acessos": "7"},
+    {"nome": "Ana Cristina", "quantidade_acessos": "9"},
+    {"nome": "Nicolas Falcão", "quantidade_acessos": "4"}
+  ],
+
+  "visualizacoes_por_estado": [
+    {"ceara": 2},
+    {"goias": 0},
+    {"rio_de_janeiro": 1},
+    {"sao_paulo": 1}
+  ],
+
+  "quantidade_posts_visualizados": [
+    {
+      "dia": [
+        {"nome":"João Paulo", "quantidade": 12},
+        {"nome": "Mateus Sousa", "quantidade": 7},
+        {"nome": "Ana Cristina", "quantidade": 14},
+        {"nome": "Nicolas Falcão", "quantidade": 9}
+      ],
+
+      "semana": [
+        {"nome":"João Paulo", "quantidade": 122},
+        {"nome": "Mateus Sousa", "quantidade": 78},
+        {"nome": "Ana Cristina", "quantidade": 141},
+        {"nome": "Nicolas Falcão", "quantidade": 97}
+      ],
+
+      "mes": [
+        {"nome":"João Paulo", "quantidade": 244},
+        {"nome": "Mateus Sousa", "quantidade": 266},
+        {"nome": "Ana Cristina", "quantidade": 354},
+        {"nome": "Nicolas Falcão", "quantidade": 789}
+      ]
+    }
+  ]
+}

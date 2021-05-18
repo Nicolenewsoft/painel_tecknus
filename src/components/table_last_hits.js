@@ -7,7 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import api from "../services/api";
+import api from "../services/api.json";
 
 const useStyles = makeStyles({
   table: {
@@ -20,17 +20,6 @@ const useStyles = makeStyles({
 
 export default function BasicTable() {
   const classes = useStyles();
-  const [access, setAccess] = useState([]);
-
-  useEffect(() => getAccess(), []);
-
-  async function getAccess() {
-    const response = await api.get(
-      "/suporterealidadeaumentada/ultimos-acessos"
-    );
-    console.log(response);
-    setAccess(response.data.usuarios_ultimo_acesso);
-  }
 
   return (
     <TableContainer component={Paper} classes={{ root: classes.border }}>
@@ -52,14 +41,6 @@ export default function BasicTable() {
                 paddingLeft: "9%",
               }}
             >
-              Diretoria
-            </TableCell>
-            <TableCell
-              style={{
-                fontWeight: "bold",
-                paddingLeft: "9%",
-              }}
-            >
               Estado
             </TableCell>
             <TableCell
@@ -73,7 +54,7 @@ export default function BasicTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {access.map((item, index) => (
+          {api.ultimos_acessos.map((item, index) => (
             <TableRow>
               <TableCell component="th" scope="row">
                 {item.nome}
@@ -84,13 +65,6 @@ export default function BasicTable() {
                 style={{ paddingLeft: "70px" }}
               >
                 {item.area}
-              </TableCell>
-              <TableCell
-                component="th"
-                scope="row"
-                style={{ paddingLeft: "70px" }}
-              >
-                {item.diretoria}
               </TableCell>
               <TableCell
                 component="th"

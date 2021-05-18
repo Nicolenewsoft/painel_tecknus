@@ -7,8 +7,7 @@ import TableContainer from "@material-ui/core/TableContainer";
 import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
-import api from "../services/api";
-
+import api from "../services/api.json";
 const useStyles = makeStyles({
   table: {
     minWidth: 650,
@@ -20,17 +19,6 @@ const useStyles = makeStyles({
 
 export default function BasicTable() {
   const classes = useStyles();
-  const [numberAcces, setNumberAccess] = useState([]);
-
-  useEffect(() => getNumberAccess(), []);
-
-  async function getNumberAccess() {
-    const response = await api.get(
-      "/suporterealidadeaumentada/quantidade-acessos"
-    );
-    console.log(response);
-    setNumberAccess(response.data.quantidade_de_acessos);
-  }
 
   return (
     <TableContainer component={Paper} classes={{ root: classes.border }}>
@@ -56,7 +44,7 @@ export default function BasicTable() {
           </TableRow>
         </TableHead>
         <TableBody>
-          {numberAcces.map((item, index) => (
+          {api.quantidade_acessos.map((item, index) => (
             <TableRow>
               <TableCell component="th" scope="row">
                 {item.nome}
@@ -66,7 +54,7 @@ export default function BasicTable() {
                 scope="row"
                 style={{ paddingLeft: "70px" }}
               >
-                {item.quantidade_de_acessos}
+                {item.quantidade_acessos}
               </TableCell>
             </TableRow>
           ))}

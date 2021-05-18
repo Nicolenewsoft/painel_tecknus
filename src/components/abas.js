@@ -22,7 +22,6 @@ export default function DisabledTabs(props) {
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
-    console.log("öi");
 
     if (newValue === 0) {
       props.onClickDay();

@@ -1,6 +1,6 @@
 import React from "react";
 import { SimpleContainer } from "../../components/container";
-import Logo from "../../assets/logo_enel.png";
+import Logo from "../../assets/logo2.png";
 import Menu from "../../components/menu";
 import Divider from "@material-ui/core/Divider";
 
@@ -15,14 +15,14 @@ export default function UltimosAcessos() {
     >
       <img
         src={Logo}
-        alt="Logo Enel"
+        alt="Logo Tecknus"
         style={{
-          marginLeft: "43%",
-          paddingBottom: "20px",
-          paddingTop: "53px",
-          height: "159px",
-          width: "19%",
-          marginTop: "-27px",
+          marginLeft: "47%",
+          paddingBottom: "18px",
+          paddingTop: "36px",
+          height: "142px",
+          width: "11%",
+          marginTop: "-9px",
         }}
       />
       <Menu />
